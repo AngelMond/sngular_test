@@ -15,7 +15,7 @@ export const InputTextFieldOutlined = ({ setInputValue, inputValue, isRequired, 
 
     return (
         <>
-            <div>
+            <div className="mb-3">
                 <label htmlFor="inputTextFieldOutlined" className="my-1">{isRequired ? '*' : null} <span className="text-ine">{textLabel}</span></label>
                 <TextField
                     id="inputTextFieldOutlined"

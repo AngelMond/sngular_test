@@ -5,11 +5,16 @@ const Context = createContext();
 
 export const ContextProvider = ({ children }) => {
 
+    // Estado almacena el resultado de la logica
     const [result, setResult] = useState(null);
+
+    // Estado para mostrar al usuario que se esta cargando o ejecutando la logica para devolver un resultado
     const [loading, setLoading] = useState(false);
+
+    // Estado para obtener el valor que usuario ingresa por input
     const [inputValue, setInputValue] = useState('');
 
-    const handleSubmit = (e, inputValue) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
         console.log("hola desde contexto")
         console.log(inputValue)
@@ -38,7 +43,10 @@ export const ContextProvider = ({ children }) => {
     )
 }
 
-
+/* 
+*  Desde aqui importamos los metodos de nuestro contexto, donde se puede desestructurar desde el componente 
+*  donde se vayan a utilizar 
+ */
 export const useUserContext = () => {
     return useContext(Context);
 }
