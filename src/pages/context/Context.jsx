@@ -9,16 +9,17 @@ export const ContextProvider = ({ children }) => {
     const [loading, setLoading] = useState(false);
     const [inputValue, setInputValue] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e, inputValue) => {
+        e.preventDefault()
         console.log("hola desde contexto")
-        // e.preventDefault();
-        // setLoading(true);
+        console.log(inputValue)
 
-        // console.log(inputValue)
-        // setTimeout(function () {
-        //     setLoading(false);
-        //     setInputValue('');
-        // }, 1000);
+        setLoading(true);
+        setTimeout(function () {
+            setResult(inputValue)
+            setLoading(false);
+            setInputValue('');
+        }, 1000);
     }
 
 
@@ -39,5 +40,5 @@ export const ContextProvider = ({ children }) => {
 
 
 export const useUserContext = () => {
-    return useContext(ContextProvider);
+    return useContext(Context);
 }

@@ -3,12 +3,15 @@ import { useUserContext } from './context/Context';
 
 export const ShowResult = () => {
 
-    // const { result } = useUserContext();
+    const { result } = useUserContext();
 
     return (
         <>
-            <div>
-                {/* <span>{result}</span> */}
+            <div className="row justify-content-center mt-5">
+                <div className='col-5'>
+                    Resultado:
+                    <span>{result}</span>
+                </div>
             </div>
         </>
     )

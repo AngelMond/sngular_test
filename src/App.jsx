@@ -8,9 +8,8 @@ export const App = () => {
 
   return (
     <>
-      <Header />
-
       <ContextProvider>
+        <Header />
         <UserForm />
         <ShowResult />
       </ContextProvider>
