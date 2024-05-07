@@ -3,6 +3,8 @@ import React, { createContext, useContext, useState } from 'react';
 
 const Context = createContext();
 
+import Serie from '../../helpers/Classes/Serie';
+
 export const ContextProvider = ({ children }) => {
 
     // Estado almacena el resultado de la logica
@@ -21,7 +23,10 @@ export const ContextProvider = ({ children }) => {
 
         setLoading(true);
         setTimeout(function () {
-            setResult(inputValue)
+            const resultado = Serie.calcularTermino(inputValue)
+            console.log(`El término ${inputValue} de la serie es: ${resultado}`);
+
+            setResult(resultado)
             setLoading(false);
             setInputValue('');
         }, 1000);
