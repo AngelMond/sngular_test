@@ -7,6 +7,8 @@ import Serie from '../../helpers/Classes/Serie';
 
 export const ContextProvider = ({ children }) => {
 
+
+
     // Estado almacena el resultado de la logica
     const [result, setResult] = useState(null);
 
@@ -16,20 +18,32 @@ export const ContextProvider = ({ children }) => {
     // Estado para obtener el valor que usuario ingresa por input
     const [inputValue, setInputValue] = useState('');
 
+    const [arrayResults, setArrResults] = useState([]);
+
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log("hola desde contexto")
-        console.log(inputValue)
+        // console.log("hola desde contexto")
+        // console.log(inputValue)
 
         setLoading(true);
-        setTimeout(function () {
-            const resultado = Serie.calcularTermino(inputValue)
-            console.log(`El término ${inputValue} de la serie es: ${resultado}`);
 
-            setResult(resultado)
-            setLoading(false);
-            setInputValue('');
-        }, 1000);
+        
+        // const serie = new Serie();
+        const parsedInputValue = parseInt(inputValue); // Parse inputValue to integer
+        const result = Serie.serie(parsedInputValue);
+        console.log(`El término ${parsedInputValue} de la serie es: ${result}`);
+
+        const obj = {
+            input: inputValue,
+            result: result
+        }
+
+        setArrResults([...arrayResults, obj ])
+
+        setResult(result)
+        setLoading(false);
+        setInputValue('');
+
     }
 
 
@@ -41,6 +55,9 @@ export const ContextProvider = ({ children }) => {
                 setInputValue,
                 inputValue,
                 result,
+                setResult,
+                arrayResults,
+                setArrResults
             }}>
                 {children}
             </Context.Provider>

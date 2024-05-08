@@ -23,7 +23,7 @@ export const UserForm = () => {
 
                     <form onSubmit={handleSubmit}>
                         <div className='row justify-content-center'>
-                            <div className='col-5'>
+                            <div className='col-8'>
                                 <InputTextFieldOutlined setInputValue={setInputValue} inputValue={inputValue} isRequired={true} textLabel={"Introduce un número"} />
                                 <SendButton
                                     loading={loading}

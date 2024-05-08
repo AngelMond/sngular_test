@@ -10,8 +10,14 @@ export const App = () => {
     <>
       <ContextProvider>
         <Header />
-        <UserForm />
-        <ShowResult />
+        <div className='row margin-top-220'>
+          <div className="col-6 border-end">
+            <UserForm />
+          </div>
+          <div className="col-6">
+            <ShowResult />
+          </div>
+        </div>
       </ContextProvider>
     </>
   )
