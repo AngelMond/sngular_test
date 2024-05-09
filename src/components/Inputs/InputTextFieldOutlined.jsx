@@ -21,6 +21,7 @@ export const InputTextFieldOutlined = ({ setInputValue, inputValue, isRequired, 
                     id="inputTextFieldOutlined"
                     variant="outlined"
                     fullWidth
+                    type="number"
                     value={inputValue}
                     onChange={handleInputChange}
                     size="small"

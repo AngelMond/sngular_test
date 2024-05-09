@@ -11,6 +11,8 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --color-border: #dde1e6;
 }
 
 a {
@@ -82,5 +84,49 @@ button:focus-visible {
 
 
 .margin-top-220{
-  margin-top: 220px;
+  margin-top: 200px !important;
 }
+
+
+.font-custom{
+  font-size: 18px;
+}
+
+
+.border-custom {
+  border-right: 1px solid var(--color-border);
+}
+
+@media (max-width: 576px  ) {
+  .border-custom {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .font-custom{
+    font-size: 11px !important;
+  }
+}
+
+@media (max-width: 768px  ) {
+  .border-custom {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .font-custom{
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 992px  ) {
+  .border-custom {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .font-custom{
+    font-size: 16px;
+  }
+}
+
+
+

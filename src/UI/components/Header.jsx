@@ -4,12 +4,10 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { useUserContext } from '../../pages/context/Context';
+import { usePageContext } from '../../context/PageContext';
 
 
 export const Header = () => {
-
-    const { result } = useUserContext();
 
     return (
         <>
@@ -20,12 +18,7 @@ export const Header = () => {
                             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                                 SNGULAR
                             </Typography>
-                            {result &&  
-                                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                                    {result}
-                                </Typography>
-                            }
-                            <Typography variant="h6" component="div" >
+                            <Typography className='me-2' variant="h6" component="div" >
                                 Test
                             </Typography>
                         </Toolbar>

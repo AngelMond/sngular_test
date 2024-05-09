@@ -3,22 +3,20 @@ import React, { createContext, useContext, useState } from 'react';
 
 const Context = createContext();
 
-import Serie from '../../helpers/Classes/Serie';
+import Serie from '../helpers/Classes/Serie';
 
 export const ContextProvider = ({ children }) => {
-
-
-
-    // Estado almacena el resultado de la logica
-    const [result, setResult] = useState(null);
-
-    // Estado para mostrar al usuario que se esta cargando o ejecutando la logica para devolver un resultado
-    const [loading, setLoading] = useState(false);
 
     // Estado para obtener el valor que usuario ingresa por input
     const [inputValue, setInputValue] = useState('');
 
-    const [arrayResults, setArrResults] = useState([]);
+    // Resultados
+    const [result, setResult] = useState(null);
+    const [resultHistory, setResultHistory] = useState([]);
+
+    // Estado para mostrar al usuario que se esta cargando o ejecutando la logica para devolver un resultado
+    const [loading, setLoading] = useState(false);
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -38,7 +36,7 @@ export const ContextProvider = ({ children }) => {
             result: result
         }
 
-        setArrResults([...arrayResults, obj ])
+        setResultHistory([...resultHistory, obj ])
 
         setResult(result)
         setLoading(false);
@@ -56,8 +54,8 @@ export const ContextProvider = ({ children }) => {
                 inputValue,
                 result,
                 setResult,
-                arrayResults,
-                setArrResults
+                resultHistory,
+                setResultHistory
             }}>
                 {children}
             </Context.Provider>
@@ -69,6 +67,6 @@ export const ContextProvider = ({ children }) => {
 *  Desde aqui importamos los metodos de nuestro contexto, donde se puede desestructurar desde el componente 
 *  donde se vayan a utilizar 
  */
-export const useUserContext = () => {
+export const usePageContext = () => {
     return useContext(Context);
 }
