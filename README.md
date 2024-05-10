@@ -1,6 +1,3 @@
-# React + Vite
-
-
 ## Ejecución de la Aplicación
 
 Para ejecutar la aplicación, sigue estos pasos:
@@ -29,6 +26,3 @@ La aplicación proporciona un método `CalcularSerie(n)` que acepta un número `
 
 El código de la aplicación cuenta con manejo de excepciones para manejar posibles errores durante el cálculo de la serie. Se hacen validaciones para validar la entrada del usuario y para capturar errores que pueda surgir durante el cálculo de los términos de la serie.
 
-
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
