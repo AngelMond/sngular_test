@@ -1,4 +1,4 @@
-## Ejecución de la Aplicación
+# Ejecución de la Aplicación
 
 Para ejecutar la aplicación, sigue estos pasos:
 
@@ -7,7 +7,7 @@ Para ejecutar la aplicación, sigue estos pasos:
 
 
 
-# Calculadora de Términos de Serie
+## Calculadora de Términos de Serie
 
 Esta aplicación calcula los términos de una serie utilizando la siguiente fórmula:
 

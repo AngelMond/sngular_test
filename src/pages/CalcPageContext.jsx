@@ -7,7 +7,7 @@ const Context = createContext();
 
 
 
-export const ContextProvider = ({ children }) => {
+export const CalcContextProvider = ({ children }) => {
 
     // Recibe la entrada del usuario
     const [inputValue, setInputValue] = useState('');
@@ -42,7 +42,7 @@ export const ContextProvider = ({ children }) => {
             setLoading(true);
 
             // Si el valor es negativo muestra a usuario mensaje de error
-            if (inputValue < 1) {
+            if (inputValue < 0) {
                 setErrorNumber('Por favor ingresa un número positivo');
                 setLoading(false);
             
@@ -51,14 +51,12 @@ export const ContextProvider = ({ children }) => {
                 
                 setErrorNumber('El número es demasiado grande, por favor ingresa un número más pequeño');
                 setLoading(false);
-                console.log("")
+                
             } else if(inputValue <= 10000) {
                 const decimalValue = new Decimal(inputValue);
                 
                 calcularSerieConPromesa(decimalValue)
                     .then(resultado => {
-                        console.log('El resultado de la serie es:', resultado);
-
                         // Guarda todos los resultados
                         setResultHistory([...resultHistory, { input: inputValue, result: resultado }])
 
@@ -75,7 +73,6 @@ export const ContextProvider = ({ children }) => {
 
         } catch (error) {
             console.error(error)
-            console.log("ha habido un error")
             setLoading(false);
         }
     }
@@ -104,6 +101,6 @@ export const ContextProvider = ({ children }) => {
 *  Desde aqui importamos los metodos de nuestro contexto, donde se puede desestructurar desde el componente 
 *  donde se vayan a utilizar 
  */
-export const usePageContext = () => {
+export const useCalcPageContext = () => {
     return useContext(Context);
 }

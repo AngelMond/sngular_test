@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Contexto
-import { usePageContext } from '../context/PageContext';
+import { useCalcPageContext } from '../pages/CalcPageContext';
 
 // Componentes
 import { Box, Button } from '@mui/material';
@@ -11,7 +11,7 @@ import { Box, Button } from '@mui/material';
 export const ShowResult = () => {
 
     // Contexto
-    const { resultHistory, setResultHistory, setResult, result } = usePageContext();
+    const { resultHistory, setResultHistory, setResult, result } = useCalcPageContext();
 
     const handleCleanHistory = () => {
         setResultHistory([]);

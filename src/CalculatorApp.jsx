@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-import { Header } from './UI/components/Header'
+import { Header } from './pages/partials/Header'
 import { UserForm } from './pages/UserForm'
 import { ShowResult } from './pages/ShowResult';
-import { ContextProvider } from './context/PageContext';
+import { CalcContextProvider } from './pages/CalcPageContext';
 
-export const App = () => {
+export const CalculatorApp = () => {
 
   return (
     <>
-      <ContextProvider>
+      <CalcContextProvider>
         <Header />
         <div className='row justify-content-center margin-top-220'>
           <div className="col-12 col-sm-10 col-md-10 col-lg-6 border-custom py-4">
@@ -18,7 +18,7 @@ export const App = () => {
             <ShowResult />
           </div>
         </div>
-      </ContextProvider>
+      </CalcContextProvider>
     </>
   )
 }

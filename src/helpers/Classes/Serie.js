@@ -21,7 +21,7 @@ export default class Serie {
       let count = 0;
       let num = new Decimal(2);
       while (count < n) {
-        if (Serie.esPrimo(num)) {
+        if (this.esPrimo(num)) {
           count++;
         }
         num = num.plus(1);
@@ -49,10 +49,14 @@ export default class Serie {
     
     // Método para calcular el término n de la serie
     static CalcularSerie(n) {
-      const primoN = Serie.enesimoPrimo(n);
-      const triangularN = Serie.triangular(n.minus(1));
-      const fibonacciN = Serie.fibonacci(n.plus(2));
-      const resultado = primoN.times(3).plus(triangularN).dividedBy(fibonacciN.times(2));
+      const primoN = this.enesimoPrimo(n);
+      const triangularN = this.triangular(n.minus(1));
+      const fibonacciN = this.fibonacci(n.plus(2));
+      
+      const resultado = primoN
+      .times(3)
+      .plus(triangularN)
+      .dividedBy(fibonacciN.times(2));
   
       return resultado ;
     }
