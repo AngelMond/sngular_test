@@ -51,7 +51,7 @@ export const CalcContextProvider = ({ children }) => {
                 
                 setErrorNumber('El número es demasiado grande, por favor ingresa un número más pequeño');
                 setLoading(false);
-                
+            
             } else if(inputValue <= 10000) {
                 const decimalValue = new Decimal(inputValue);
                 

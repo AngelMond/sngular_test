@@ -1,5 +1,6 @@
 import Decimal from 'decimal.js';
 
+
 export default class Serie {
 
     // Método para verificar si un número es primo
