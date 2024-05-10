@@ -1,8 +1,6 @@
-import React from "react";
-
 import { TextField } from '@mui/material';
 
-const maxLength = 100;
+const maxLength = 50;
 
 export const InputTextFieldOutlined = ({ setInputValue, inputValue, isRequired, textLabel }) => {
 
@@ -16,9 +14,9 @@ export const InputTextFieldOutlined = ({ setInputValue, inputValue, isRequired, 
     return (
         <>
             <div className="mb-3">
-                <label htmlFor="inputTextFieldOutlined" className="my-1">{isRequired ? '*' : null} <span className="text-ine">{textLabel}</span></label>
+                <label htmlFor="inputUser" className="my-1">{isRequired ? '*' : null} <span className="text-ine">{textLabel}</span></label>
                 <TextField
-                    id="inputTextFieldOutlined"
+                    id="inputUser"
                     variant="outlined"
                     fullWidth
                     type="number"

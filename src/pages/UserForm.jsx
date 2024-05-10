@@ -12,7 +12,7 @@ export const UserForm = () => {
 
 
     // Funcion de context para ejecutar logica usando el input del usuario y el metodo de la clase Serie
-    const { handleSubmit, loading, inputValue, setInputValue } = usePageContext();
+    const { handleSubmit, loading, inputValue, setInputValue, errorNumber, result } = usePageContext();
 
 
     return (
@@ -28,6 +28,15 @@ export const UserForm = () => {
                                     loading={loading}
                                     buttonText={'Calcular término'}
                                 />
+                                {errorNumber &&
+                                    <span className='mt-3 text-danger'>{errorNumber}</span>
+                                }
+                                {result &&
+
+                                    <div className='mt-4 mb-3 p-1'>
+                                        <h4>Resultado: <span className='text-success'>{result}</span></h4>
+                                    </div>
+                                }
                             </div>
                         </div>
                     </form>

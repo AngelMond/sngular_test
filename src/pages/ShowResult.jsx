@@ -3,14 +3,15 @@ import React from 'react'
 // Contexto
 import { usePageContext } from '../context/PageContext';
 
+// Componentes
 import { Box, Button } from '@mui/material';
 
 
-// Componente que muestra el resultado
+// Componente que muestra todos los resultados
 export const ShowResult = () => {
 
-    const { result, resultHistory, setResultHistory, setResult } = usePageContext();
-
+    // Contexto
+    const { resultHistory, setResultHistory, setResult, result } = usePageContext();
 
     const handleCleanHistory = () => {
         setResultHistory([]);
@@ -19,9 +20,10 @@ export const ShowResult = () => {
 
     return (
         <>
+            
             <div className="d-flex">
                 <div className='m-2'>
-                    <h3 className=''>Resultados</h3>
+                    <h3 className='text-muted'>Historial </h3>
                 </div>
                 <div className="m-2">
                     <Box sx={{ position: 'relative' }}>
@@ -44,7 +46,9 @@ export const ShowResult = () => {
                             {resultHistory.map((el, ix) => {
                                 return (
                                     <div key={ix} className=''>
-                                        <span className='ms-2 font-custom text-secondary'>El término {el.input} de la serie es: {el.result}</span>
+                                        <span className='ms-2 font-custom text-secondary'>
+                                            El término {el.input} de la serie es: {el.result}
+                                        </span>
                                     </div>
                                 );
                             })}

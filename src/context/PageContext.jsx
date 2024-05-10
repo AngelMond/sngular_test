@@ -1,47 +1,83 @@
 
 import React, { createContext, useContext, useState } from 'react';
+import Decimal from 'decimal.js';
+import Serie from '../helpers/Classes/Serie';
 
 const Context = createContext();
 
-import Serie from '../helpers/Classes/Serie';
+
 
 export const ContextProvider = ({ children }) => {
 
-    // Estado para obtener el valor que usuario ingresa por input
+    // Recibe la entrada del usuario
     const [inputValue, setInputValue] = useState('');
+    const [errorNumber, setErrorNumber] = useState(null);
+    
 
     // Resultados
     const [result, setResult] = useState(null);
     const [resultHistory, setResultHistory] = useState([]);
 
-    // Estado para mostrar al usuario que se esta cargando o ejecutando la logica para devolver un resultado
+    // Muestra a usuario que se esta procesando la logica
     const [loading, setLoading] = useState(false);
 
+    function calcularSerieConPromesa(n) {
+        return new Promise((resolve, reject) => {
+            try {
+                const resultado = Serie.CalcularSerie(n);
+                const resultadoNumerico = resultado.toNumber();
+                resolve(resultadoNumerico);
+            } catch (error) {
+                reject(error);
+            }
+        });
+    }
 
+
+    // Controla el envio del formulario y ejecuta logica para devolver un resultado
     const handleSubmit = (e) => {
-        e.preventDefault()
-        // console.log("hola desde contexto")
-        // console.log(inputValue)
+        try {
+            e.preventDefault()
+            setErrorNumber(null);
+            setLoading(true);
 
-        setLoading(true);
+            // Si el valor es negativo muestra a usuario mensaje de error
+            if (inputValue < 1) {
+                setErrorNumber('Por favor ingresa un número positivo');
+                setLoading(false);
+            
+            // Si el numero es muy grande muestra mensaje error al usuario
+            } else if (inputValue > 10000) {
+                
+                setErrorNumber('El número es demasiado grande, por favor ingresa un número más pequeño');
+                setLoading(false);
+                console.log("")
+            } else if(inputValue <= 10000) {
+                const decimalValue = new Decimal(inputValue);
+                
+                calcularSerieConPromesa(decimalValue)
+                    .then(resultado => {
+                        console.log('El resultado de la serie es:', resultado);
 
-        
-        // const serie = new Serie();
-        const parsedInputValue = parseInt(inputValue); // Parse inputValue to integer
-        const result = Serie.serie(parsedInputValue);
-        console.log(`El término ${parsedInputValue} de la serie es: ${result}`);
+                        // Guarda todos los resultados
+                        setResultHistory([...resultHistory, { input: inputValue, result: resultado }])
 
-        const obj = {
-            input: inputValue,
-            result: result
+                        // Guarda el resultado actual
+                        setResult(resultado)
+                        setLoading(false);
+                        setInputValue('');
+                    })
+                    .catch(error => {
+                        console.error('Se produjo un error al calcular la serie:', error);
+                        setLoading(false);
+                    });
+            }
+
+        } catch (error) {
+            console.error(error)
+            console.log("ha habido un error")
+            setLoading(false);
         }
-
-        setResultHistory([...resultHistory, obj ])
-
-        setResult(result)
-        setLoading(false);
-        setInputValue('');
-
     }
 
 
@@ -55,7 +91,8 @@ export const ContextProvider = ({ children }) => {
                 result,
                 setResult,
                 resultHistory,
-                setResultHistory
+                setResultHistory,
+                errorNumber
             }}>
                 {children}
             </Context.Provider>
