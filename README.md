@@ -16,12 +16,6 @@ La aplicación proporciona un método `CalcularSerie(n)` que acepta un número `
 
 # Ejecución de la Aplicación
 
-Para ejecutar la aplicación, sigue estos pasos:
-
-1. Abre una terminal y navega hasta la raíz del proyecto.
-2. Instala las dependencias del proyecto ejecutando: `npm install`
-3. Ejecuta el servidor de desarrollo ejecutando: `npm run dev`
-
 ## Prerrequisitos
 
 Antes de comenzar, asegúrate de tener instaladas las siguientes herramientas:
@@ -29,20 +23,22 @@ Antes de comenzar, asegúrate de tener instaladas las siguientes herramientas:
 - Node.js y npm
 
 
+Para ejecutar la aplicación, sigue estos pasos:
+
+1. Clona el repositorio en tu máquina local.
+2. Abre una terminal y navega hasta la raíz del proyecto.
+3. Instala las dependencias del proyecto ejecutando: `npm install`
+4. Ejecuta el servidor de desarrollo ejecutando: `npm run dev`
+
+
 # Instrucciones para realizar pruebas unitarias
 
 
-## Configuración
-
-1. Clona el repositorio en tu máquina local.
-
-
-## Ejecución de las pruebas
-
 Para ejecutar las pruebas unitarias, sigue estos pasos:
 
-1. Abre una terminal y navega hasta la raíz del proyecto.
-2. Ejecuta el siguiente comando: `npm run test`
+1. Clona el repositorio en tu máquina local.
+2. Abre una terminal, navega hasta la raíz del proyecto e instala dependencias con: `npm install`.
+3. Ejecuta el siguiente comando: `npm run test`
 
 Esto iniciará la ejecución de las pruebas unitarias utilizando Jest. Verás el resultado de las pruebas en la terminal.
 
@@ -62,6 +58,6 @@ Esta aplicación se construyó utilizando las siguientes tecnologías:
 - **Bootstrap**: Un framework front-end de código abierto que facilita el diseño y la estilización de sitios web y aplicaciones web.
 
 
-
+Saludos!
 
 
