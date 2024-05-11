@@ -6,62 +6,112 @@ describe('Test de métodos de la clase Serie', () => {
 
     describe('Pruebas para el método CalcularSerie()', () => {
         test('Para n = 1', () => {
+            //Arrage
             const n = new Decimal(1);
+
+            //Act
             const result = Serie.CalcularSerie(n);
+
+            //Assert
             expect(result.toNumber()).toEqual(1.5);
         });
 
         test('Para n = 2', () => {
+            //Arrage
             const n = new Decimal(2);
+
+            //Act
             const result = Serie.CalcularSerie(n);
+
+            //Assert
             expect(result.toNumber()).toEqual(1.6666666666666667);
         });
 
         test('Para n = 3', () => {
+            //Arrage
             const n = new Decimal(3);
+
+            //Act
             const result = Serie.CalcularSerie(n);
+
+            //Assert
             expect(result.toNumber()).toEqual(1.8);
         });
 
         test('Para n = 4', () => {
+            //Arrage
             const n = new Decimal(4);
+
+            //Act
             const result = Serie.CalcularSerie(n);
+
+            //Assert
             expect(result.toNumber()).toEqual(1.6875);
         });
 
         test('Para n = 5', () => {
+            //Arrage
             const n = new Decimal(5);
+
+            //Act
             const result = Serie.CalcularSerie(n);
+
+            //Assert
             expect(result.toNumber()).toEqual(1.6538461538461537);
         });
 
         test('Para n = 6', () => {
+            //Arrage
             const n = new Decimal(6);
+
+            //Act
             const result = Serie.CalcularSerie(n);
+
+            //Assert
             expect(result.toNumber()).toEqual(1.2857142857142858);
         });
 
         test('Para n = 7', () => {
+            //Arrage
             const n = new Decimal(7);
+            
+            //Act
             const result = Serie.CalcularSerie(n);
+
+            //Assert
             expect(result.toNumber()).toEqual(1.0588235294117647059);
         });
 
         test('Para n = 8', () => {
+            //Arrage
             const n = new Decimal(8);
+
+            //Act
             const result = Serie.CalcularSerie(n);
+
+            //Assert
             expect(result.toNumber()).toEqual(0.7727272727272727);
         });
 
         test('Para n = 9', () => {
+            //Arrage
             const n = new Decimal(9);
+
+            //Act
             const result = Serie.CalcularSerie(n);
+
+            //Assert
             expect(result.toNumber()).toEqual(0.5898876404494382);
         });
 
         test('Para n = 10', () => {
+            //Arrage
             const n = new Decimal(10);
+
+            //Act
             const result = Serie.CalcularSerie(n);
+
+            //Assert
             expect(result.toNumber()).toEqual(0.4583333333333333);
         });
     });
@@ -118,7 +168,7 @@ describe('Test de métodos de la clase Serie', () => {
             const result = Serie.enesimoPrimo(decimalValue);
 
             // Assert
-            expect(result).not.toEqual(expect.any(Number)); // Esperamos que el resultado sea NaN
+            expect(result).not.toEqual(expect.any(Number)); 
         });
     });
 
