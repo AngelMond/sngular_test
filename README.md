@@ -25,8 +25,7 @@ Para ejecutar la aplicación, sigue estos pasos:
 
 Antes de comenzar, asegúrate de tener instaladas las siguientes herramientas:
 
-- Node.js
-- Jest (framework de pruebas)
+- Node.js y npm
 
 
 # Instrucciones para realizar pruebas unitarias
