@@ -35,7 +35,7 @@ Antes de comenzar, asegúrate de tener instaladas las siguientes herramientas:
 ## Configuración
 
 1. Clona el repositorio en tu máquina local.
-2. Abre una terminal y navega hasta el directorio del proyecto.
+2. Abre una terminal y navega hasta la raíz del proyecto.
 
 ## Ejecución de las pruebas
 
