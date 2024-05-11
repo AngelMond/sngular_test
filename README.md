@@ -18,8 +18,9 @@ La aplicación proporciona un método `CalcularSerie(n)` que acepta un número `
 
 Para ejecutar la aplicación, sigue estos pasos:
 
-1. Instala las dependencias del proyecto ejecutando: `npm install`
-2. Ejecuta el servidor de desarrollo ejecutando: `npm run dev`
+1. Abre una terminal y navega hasta la raíz del proyecto.
+2. Instala las dependencias del proyecto ejecutando: `npm install`
+3. Ejecuta el servidor de desarrollo ejecutando: `npm run dev`
 
 ## Prerrequisitos
 
@@ -34,13 +35,13 @@ Antes de comenzar, asegúrate de tener instaladas las siguientes herramientas:
 ## Configuración
 
 1. Clona el repositorio en tu máquina local.
-2. Abre una terminal y navega hasta la raíz del proyecto.
+
 
 ## Ejecución de las pruebas
 
 Para ejecutar las pruebas unitarias, sigue estos pasos:
 
-1. Abre una terminal en el directorio del proyecto.
+1. Abre una terminal y navega hasta la raíz del proyecto.
 2. Ejecuta el siguiente comando: `npm run test`
 
 Esto iniciará la ejecución de las pruebas unitarias utilizando Jest. Verás el resultado de las pruebas en la terminal.
