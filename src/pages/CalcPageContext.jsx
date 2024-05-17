@@ -56,7 +56,6 @@ export const CalcContextProvider = ({ children }) => {
                 setLoading(false);
 
             }else if (inputValue == 0) {
-                console.log(inputValue)
                 setErrorNumber('Ingresa un número mayor');
                 setLoading(false);
 
@@ -87,8 +86,7 @@ export const CalcContextProvider = ({ children }) => {
 
         } catch (error) {
             console.error(error)
-            setErrorNumber('Por favor ingresa un número');
-            console.log("ingresa un numero")
+            setErrorNumber('Ocurrió un error');
             setLoading(false);
         }
     }
